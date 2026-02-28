@@ -193,7 +193,7 @@ resource "aws_lb_listener_rule" "main" {
 
   condition {
     host_header {
-      values = [ local.host_context ]
+      values = local.host_context
     }
   }
 }
