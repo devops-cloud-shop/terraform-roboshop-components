@@ -125,10 +125,10 @@ resource "aws_launch_template" "main" {
 resource "aws_autoscaling_group" "main" {
   name                      = "${local.common_name_suffix}-${var.component}"
   max_size                  = 5
-  min_size                  = 2
+  min_size                  = 1
   health_check_grace_period = 100
   health_check_type         = "ELB"
-  desired_capacity          = 2
+  desired_capacity          = 1
   force_delete              = false
 
   vpc_zone_identifier       = local.private_subnet_ids
